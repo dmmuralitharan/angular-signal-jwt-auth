@@ -1,1 +1,4 @@
-export const environment = {};
+export const environment = {
+    production: true,
+    apiRoot: 'http://localhost:5000/api/v1',
+};
