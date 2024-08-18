@@ -1,0 +1,26 @@
+
+
+
+<div class="container">
+    @for (book of books(); track book.id) {
+
+        <mat-card appearance="outlined">
+            <mat-card-header>
+              <mat-card-subtitle> Book : {{ book.bookName }} </mat-card-subtitle>
+              <mat-card-subtitle>Price : {{ book.price }} </mat-card-subtitle>
+              <mat-card-subtitle>Date Uploaded : {{ book.dateCreated | date: 'MM/d/yy' }} </mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+        
+    } @empty { 
+        <mat-card appearance="outlined">
+            <mat-card-header>
+                No Books Available
+            </mat-card-header>
+        </mat-card>
+    
+    }
+   
+    <!-- <app-book-list [books]="books()"></app-book-list> -->
+  
+</div>
