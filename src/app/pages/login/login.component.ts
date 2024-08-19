@@ -36,7 +36,6 @@ export class LoginComponent {
       } else if (this.authService.isAdmin()) {
         await this.router.navigate(['home']);
       }
-      
     } catch (error) {
       console.log(error);
     }

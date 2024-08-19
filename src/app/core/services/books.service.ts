@@ -18,11 +18,11 @@ export class BooksService {
   
   async getAllBooks(): Promise<Book[]> {
 
-    const user = this.authService.user()
-    const jwtToken = user?.token
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${jwtToken}`)
+    // const user = this.authService.user()
+    // const jwtToken = user?.token
+    // const headers = new HttpHeaders().set('Authorization', `Bearer ${jwtToken}`)
 
-    const book$ = this.http.get<GetBookResponse>(`${environment.apiRoot}/books`, { headers })
+    const book$ = this.http.get<GetBookResponse>(`${environment.apiRoot}/books`)
 
     const bookResponse = await firstValueFrom(book$)
 
@@ -32,6 +32,11 @@ export class BooksService {
 
   }
 
+
+  async createBook(book: Partial<Book>): Promise<Book> {
+    const book$ = this.http.post<Book>(`${environment.apiRoot}/books`, book);
+    return await firstValueFrom(book$)
+  }
 
   
 }

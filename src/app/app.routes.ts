@@ -4,6 +4,7 @@ import { BooksComponent } from './pages/books/books.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { isUserAuthenticated } from './core/guards/user-auth.guard';
+import { AddBookComponent } from './pages/books/add-book/add-book.component';
 
 export const routes: Routes = [
     {
@@ -13,6 +14,11 @@ export const routes: Routes = [
     {
         path: 'books',
         component: BooksComponent,
+        canActivate: [isUserAuthenticated]
+    },
+    {
+        path: 'addbook',
+        component: AddBookComponent,
         canActivate: [isUserAuthenticated]
     },
     {
