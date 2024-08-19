@@ -1,0 +1,27 @@
+<div class="add-book-container">
+    <div class="add-book">
+      <div class="add-book-form" [formGroup]="form">
+        <h3>Add Book</h3>
+    
+        <div class="form-control">
+          <label>Book Name:</label>
+          <input placeholder="Enter your bookname" formControlName="bookname" />
+        </div>
+    
+        <div class="form-control">
+          <label>Price:</label>
+          <input
+            type="text"
+            placeholder="Enter your price"
+            formControlName="price"
+          />
+        </div>
+      </div>
+    
+      <div class="form-actions">
+        <button class="btn" (click)="createBook()">Create Book</button>
+        
+        <!-- <button class="btn" routerLink="/home">Home</button> -->
+      </div>
+    </div>
+    
