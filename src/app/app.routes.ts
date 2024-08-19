@@ -8,12 +8,16 @@ import { isUserAuthenticated } from './core/guards/user-auth.guard';
 export const routes: Routes = [
     {
         path: '',
-        component: HomeComponent,
-        canActivate: [isUserAuthenticated]
+        component: LoginComponent,
     },
     {
         path: 'books',
         component: BooksComponent,
+        canActivate: [isUserAuthenticated]
+    },
+    {
+        path: 'home',
+        component: HomeComponent,
         canActivate: [isUserAuthenticated]
     },
     {

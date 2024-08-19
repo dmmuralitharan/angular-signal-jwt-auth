@@ -47,6 +47,9 @@ export class AuthService {
 
   isUserLoggedIn = computed(() => !!this.user())
 
+  isAdmin = computed(() => this.user()?.role === 'admin')
+  isUser = computed(() => this.user()?.role === 'user')
+
   async login(username: string, password: string): Promise<User> {
 
     const user$ = this.http.post<User>(`${environment.apiRoot}/auth/login`, {username, password})

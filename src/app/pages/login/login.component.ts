@@ -19,7 +19,7 @@ export class LoginComponent {
   });
 
   authService = inject(AuthService);
-  router = inject(Router)
+  router = inject(Router);
   async login() {
     try {
       const { username, password } = this.form.value;
@@ -31,7 +31,12 @@ export class LoginComponent {
 
       await this.authService.login(username, password);
 
-      await this.router.navigate(['books'])
+      if (this.authService.isUser()) {
+        await this.router.navigate(['books']);
+      } else if (this.authService.isAdmin()) {
+        await this.router.navigate(['home']);
+      }
+      
     } catch (error) {
       console.log(error);
     }

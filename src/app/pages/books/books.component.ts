@@ -16,7 +16,7 @@ export class BooksComponent {
   constructor() {
    
     this.getAllBooks().then(() => {
-      console.log(`All Books Are Loaded ... `, this.#books());
+      // console.log(`All Books Are Loaded ... `, this.#books());
     })
 
   }
