@@ -13,17 +13,20 @@ export const routes: Routes = [
     },
     {
         path: 'books',
-        component: BooksComponent,
+        // component: BooksComponent,
+        loadComponent: () => import('./pages/books/books.component').then(booksComponent => booksComponent.BooksComponent),
         canActivate: [isUserAuthenticated]
     },
     {
         path: 'addbook',
-        component: AddBookComponent,
-        canActivate: [isUserAuthenticated]
+        // component: AddBookComponent,
+        loadComponent: () => import('./pages/books/add-book/add-book.component').then(addBookComponent => addBookComponent.AddBookComponent),
+        canActivate: [isUserAuthenticated],
     },
     {
         path: 'home',
-        component: HomeComponent,
+        // component: HomeComponent,
+        loadComponent: () => import('./pages/home/home.component').then(homeComponent => homeComponent.HomeComponent),
         canActivate: [isUserAuthenticated]
     },
     {
