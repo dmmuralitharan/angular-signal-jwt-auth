@@ -1,4 +1,5 @@
 export const environment = {
-    production: false,
-    apiRoot: "http://localhost:5000/api/v1"  
+    production: true,
+    // apiRoot: "http://localhost:5000/api/v1"  
+    apiRoot: "https://dceconnect.in/flask-orm-jwt-auth-api/api/v1"  
 };
